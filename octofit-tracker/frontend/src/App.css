@@ -1,0 +1,29 @@
+.app-shell {
+  min-height: 100vh;
+}
+
+.navbar {
+  box-shadow: 0 10px 20px rgba(42, 64, 122, 0.08);
+}
+
+.card {
+  border-radius: 1rem;
+}
+
+.list-group-item {
+  border: none;
+  background: transparent;
+}
+
+.badge {
+  min-width: 2.5rem;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.card-body h2 {
+  line-height: 1;
+}
+
