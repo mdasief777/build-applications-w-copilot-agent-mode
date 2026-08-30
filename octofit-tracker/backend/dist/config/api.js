@@ -1,10 +1,9 @@
-const codespaceName = process.env.CODESPACE_NAME;
-export const apiBaseUrl = codespaceName
-    ? `https://${codespaceName}-8000.app.github.dev`
-    : 'http://localhost:8000';
-export const getApiBaseUrl = () => {
-    const currentCodespaceName = process.env.CODESPACE_NAME;
-    return currentCodespaceName
-        ? `https://${currentCodespaceName}-8000.app.github.dev`
-        : 'http://localhost:8000';
+const getBaseUrl = (codespaceName) => {
+    if (codespaceName) {
+        return `https://${codespaceName}-8000.app.github.dev`;
+    }
+    return 'http://localhost:8000';
 };
+export const apiBaseUrl = getBaseUrl(process.env.CODESPACE_NAME);
+export const getApiBaseUrl = () => getBaseUrl(process.env.CODESPACE_NAME);
+export default apiBaseUrl;

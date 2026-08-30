@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import connectDB from './config/database.js';
 import apiRoutes from './routes/api.js';
+import { getApiBaseUrl } from './config/api.js';
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ async function startServer() {
   await connectDB();
   app.listen(port, () => {
     console.log(`OctoFit Tracker API running on http://localhost:${port}`);
+    console.log(`API base URL: ${getApiBaseUrl()}`);
   });
 }
 
