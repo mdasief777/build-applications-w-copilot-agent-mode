@@ -6,3 +6,4 @@ export default async function connectDB() {
     console.log('Connected to octofit_db');
     return mongoose.connection;
 }
+export { connectionString };
